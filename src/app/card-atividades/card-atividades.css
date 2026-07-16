@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+
+.card-atividades {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: rgba(18, 18, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  color: #f3f4f6;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-atividades:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.55);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 14px;
+}
+
+.icon-header {
+  font-size: 1.25rem;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.4));
+}
+
+.card-header h3 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #9ca3af;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.atividades-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.atividade-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 2fr 1fr;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 14px 20px;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.atividade-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+.atividade-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.course-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  text-align: center;
+  width: fit-content;
+}
+
+/* Cores por Curso */
+.badge-telematica {
+  background: rgba(0, 229, 255, 0.1);
+  color: #00e5ff;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.badge-software {
+  background: rgba(168, 85, 247, 0.1);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.badge-gestao {
+  background: rgba(234, 179, 8, 0.1);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease-in-out;
+}
+
+.progress-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-align: right;
+}
+
+.deadline-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.deadline-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #f3f4f6;
+}
+
+.priority-indicator {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.priority-alta { color: #ff4a4a; }
+.priority-media { color: #facc15; }
+.priority-baixa { color: #00ff88; }
+
+/* Responsividade para telas menores */
+@media (max-width: 900px) {
+  .atividade-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .deadline-info {
+    align-items: flex-start;
+  }
+}

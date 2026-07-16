@@ -1,0 +1,37 @@
+<div class="card-atividades">
+  <div class="card-header">
+    <span class="icon-header">🎯</span>
+    <h3>ATIVIDADES PENDENTES</h3>
+  </div>
+
+  <div class="atividades-container">
+    @for (atv of atividades; track atv.titulo) {
+      <div class="atividade-row">
+        <span class="atividade-title">{{ atv.titulo }}</span>
+
+        <div>
+          <span class="course-badge" [ngClass]="getBadgeClass(atv.curso)">
+            {{ atv.curso }}
+          </span>
+        </div>
+
+        <div class="progress-section">
+          <div class="progress-track">
+            <div class="progress-fill" 
+                 [style.width.%]="atv.progresso" 
+                 [style.background-color]="getBarColor(atv.prioridade)">
+            </div>
+          </div>
+          <span class="progress-text">{{ atv.progresso }}% concluído</span>
+        </div>
+
+        <div class="deadline-info">
+          <span class="deadline-text">⏳ {{ atv.prazo }}</span>
+          <span class="priority-indicator" [ngClass]="'priority-' + atv.prioridade">
+            Prioridade {{ atv.prioridade }}
+          </span>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<main class="dashboard-container">
+  <header class="dashboard-header">
+    <div class="header-info">
+      <h1>LAB CONTROL & ACADEMIC DASHBOARD</h1>
+      <p class="welcome-text">Bem-vinda, Desireê Costa | <span class="badge-courses">3 Cursos Ativos</span></p>
+    </div>
+    <div class="system-status">
+      <span class="pulse-indicator"></span>
+      <span class="status-text">ESP32: ON</span>
+    </div>
+  </header>
+
+  <section class="dashboard-grid">
+    
+    <div class="control_home">
+      <app-card-buttons></app-card-buttons>
+      <app-card-status></app-card-status>
+    </div>
+    
+    <div class="grid-col">
+      <app-card-horario></app-card-horario>
+    </div>
+
+    <div class="grid-col">
+      <app-card-atividades></app-card-atividades>
+    </div>
+
+  </section>
+</main>

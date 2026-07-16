@@ -1,0 +1,38 @@
+ <div class = "card-automation">
+  <div class="card-header">
+    <span class="icon-header">⚡</span>
+    <h3>CONTROLE DO QUARTO</h3>
+    <span class="badge">Home</span>
+  </div>
+
+  <div class="control-group">
+    <div class="control-item">
+      <div class="item-info">
+        <span class="icon light-icon" [class.active]="luzLigada">💡</span>
+        <span class="item-name">ILUMINAÇÃO</span>
+      </div>
+      <div class="toggle-buttons">
+        <button class="btn btn-on" [class.active]="luzLigada" (click)="alterarLuz(true)">LIGAR</button>
+        <button class="btn btn-off" [class.active]="!luzLigada" (click)="alterarLuz(false)">DESL</button>
+      </div>
+    </div>
+
+    <div class="control-item">
+      <div class="item-info">
+        <span class="icon fan-icon" [class.active]="ventiladorLigado" [class.spinning]="ventiladorLigado">💨</span>
+        <span class="item-name">VENTILADOR</span>
+      </div>
+      <div class="toggle-buttons">
+        <button class="btn btn-on" [class.active]="ventiladorLigado" (click)="alterarVentilador(true)">LIGAR</button>
+        <button class="btn btn-off" [class.active]="!ventiladorLigado" (click)="alterarVentilador(false)">DESL</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="routine-section">
+    <button class="btn-routine" (click)="executarModoDormir()">
+      <span class="icon-routine">🍿</span> MODO DORMIR
+    </button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="card-schedule">
+  <div class="card-header">
+    <span class="icon-header">📅</span>
+    <h3>GRADE DE HORÁRIOS</h3>
+  </div>
+
+  <div class="schedule-list">
+    @for (aula of aulas; track aula.materia) {
+      <div class="schedule-item" [class.status-agora]="aula.status === 'agora'">
+        <div class="item-header">
+          <span class="course-badge" [ngClass]="getBadgeClass(aula.curso)">
+            {{ aula.curso }}
+          </span>
+          <span class="time-tag">{{ aula.horario }}</span>
+        </div>
+        
+        <h4 class="materia-title">{{ aula.materia }}</h4>
+        
+        <div class="item-footer">
+          <span class="professor">👤 {{ aula.professor }}</span>
+          <span class="sala">📍 {{ aula.sala }}</span>
+        </div>
+      </div>
+    }
+  </div>
+</div>
