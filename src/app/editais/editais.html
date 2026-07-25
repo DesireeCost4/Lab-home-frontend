@@ -1,0 +1,55 @@
+<div class="container-editais">
+  <!-- Cabeçalho do Painel -->
+  <header class="header-painel">
+    <div>
+      <h2>📌 Editais e Oportunidades - IFPB</h2>
+      
+    </div>
+
+    <button 
+      (click)="sincronizar()" 
+      [disabled]="sincronizando"
+      class="btn-sync">
+      <span *ngIf="!sincronizando">🔄 Sincronizar Agora</span>
+      <span *ngIf="sincronizando">⏳ Raspando IFPB...</span>
+    </button>
+  </header>
+
+  <p *ngIf="mensagemFeed" class="feedback-text">{{ mensagemFeed }}</p>
+
+  <div class="search-bar">
+    <input 
+      type="text" 
+      [(ngModel)]="termoBusca" 
+      (input)="filtrar()" 
+      placeholder="Filtrar por título (ex: Mulheres Mil, Seleção, 2026)..." />
+  </div>
+
+
+  <div *ngIf="carregando" class="loading-state">
+    Carregando editais salvos...
+  </div>
+
+  <div *ngIf="!carregando && editaisFiltrados.length > 0" class="grid-editais">
+    @for (edital of editaisFiltrados; track edital.id) {
+  <div class="card-edital">
+    <div class="card-header">
+      <span class="badge-origem">{{ edital.origem }}</span>
+      <span class="data-pub">{{ edital.data_publicacao | date:'dd/MM/yyyy' }}</span>
+    </div>
+    
+    <h3 class="titulo-edital">{{ edital.titulo }}</h3>
+
+    <div class="card-footer">
+      <a [href]="edital.link" target="_blank" rel="noopener noreferrer" class="link-acesso">
+        Acessar Edital ↗
+      </a>
+    </div>
+  </div>
+}
+  </div>
+
+  <div *ngIf="!carregando && editaisFiltrados.length === 0" class="empty-state">
+    Nenhum edital encontrado. Clique em "Sincronizar Agora" para buscar novos dados.
+  </div>
+</div>

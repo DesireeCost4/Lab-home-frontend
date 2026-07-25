@@ -6,11 +6,12 @@ import { CardHorario } from './card-horario/card-horario';
 import { CardStatus } from './card-status/card-status';
 import { CardAtividades } from './card-atividades/card-atividades';
 import { CardEmail } from './card-email/card-email';
+import { EditaisComponent } from './editais/editais';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CardButtonsComponent, CardHorario, CardStatus, CardAtividades,CardEmail],
+  imports: [RouterOutlet, CardButtonsComponent, CardHorario, CardStatus, CardAtividades,CardEmail, EditaisComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
