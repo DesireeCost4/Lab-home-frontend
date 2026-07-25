@@ -88,24 +88,48 @@
 }
 
 /* Cores customizadas para cada curso */
-.badge-telematica {
-  background: rgba(0, 229, 255, 0.1);
-  color: #00e5ff;
-  border: 1px solid rgba(0, 229, 255, 0.2);
+/* Badges adicionais das novas matérias da sua planilha */
+.badge-matematica {
+  background: rgba(129, 199, 132, 0.1);
+  border: 1px solid rgba(129, 199, 132, 0.2);
+  color: #81c784;
 }
 
-.badge-software {
-  background: rgba(168, 85, 247, 0.1);
-  color: #c084fc;
-  border: 1px solid rgba(168, 85, 247, 0.2);
+.badge-sistemas {
+  background: rgba(92, 107, 192, 0.1);
+  border: 1px solid rgba(92, 107, 192, 0.2);
+  color: #5c6bc0;
 }
 
-.badge-gestao {
-  background: rgba(234, 179, 8, 0.1);
-  color: #facc15;
-  border: 1px solid rgba(234, 179, 8, 0.2);
+.badge-saude {
+  background: rgba(41, 182, 246, 0.1);
+  border: 1px solid rgba(41, 182, 246, 0.2);
+  color: #29b6f6;
 }
 
+.badge-eletronica {
+  background: rgba(156, 204, 101, 0.1);
+  border: 1px solid rgba(156, 204, 101, 0.2);
+  color: #9ccc65;
+}
+
+/* Opacidade sutil para aulas que já acabaram hoje */
+.status-concluida {
+  opacity: 0.45;
+  filter: grayscale(30%);
+}
+
+/* Feedback caso não tenha aulas */
+.no-schedule-feedback {
+  text-align: center;
+  padding: 24px;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-weight: 600;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.01);
+}
 .time-tag {
   font-size: 0.75rem;
   font-weight: 700;

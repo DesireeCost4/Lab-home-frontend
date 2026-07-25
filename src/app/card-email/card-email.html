@@ -1,0 +1,53 @@
+<div class="card-email">
+  <div class="card-header">
+    <span class="icon-header">📩</span>
+    <h3>ÚLTIMOS E-MAILS RECEBIDOS</h3>
+    
+    <!-- Botão de Sincronizar -->
+    <button 
+      class="btn-sync" 
+      [class.girando]="sincronizando" 
+      (click)="sincronizar()" 
+      title="Sincronizar e-mails agora">
+      🔄
+    </button>
+  </div>
+
+  <div class="email-list">
+    @if (carregando) {
+      <div class="no-email-feedback">
+        ⏳ Sincronizando com o robô de e-mails...
+      </div>
+    } @else {
+      @for (item of emailsExibidos; track item.id) {
+        <div class="email-item">
+          
+          <div class="item-header">
+            <div class="badges-group">
+              <span class="account-tag" [class.tag-tec]="getContaTag(item) === '#tec'" [class.tag-sup]="getContaTag(item) === '#sup'">
+                {{ getContaTag(item) }}
+              </span>
+              <span class="category-badge" [ngClass]="getBadgeClass(item.categoria)">
+                {{ item.categoria || 'NOTIFICAÇÃO' }}
+              </span>
+            </div>
+            <span class="time-tag">{{ item.data_recebida | date:'dd/MM • HH:mm' }}</span>
+          </div>
+
+          <h4 class="email-title">{{ item.titulo }}</h4>
+
+          <div class="item-footer">
+            <span class="remetente" title="{{ item.remetente }}">
+              👤 {{ item.remetente }}
+            </span>
+          </div>
+
+        </div>
+      } @empty {
+        <div class="no-email-feedback">
+          📭 Nenhuma notificação encontrada no momento.
+        </div>
+      }
+    }
+  </div>
+</div>

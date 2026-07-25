@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.card-email {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: rgba(18, 18, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  width: 85%;
+  max-width: 380px;
+  color: #f3f4f6;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 20px;
+}
+
+.card-email:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.55);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 14px;
+}
+
+.icon-header {
+  font-size: 1.25rem;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.4));
+}
+
+.card-header h3 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #9ca3af;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.email-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 370px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Scrollbar sutil para quando tiver os 8 itens */
+.email-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.email-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.email-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.email-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-urgente {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.badge-academico {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.badge-comunicado {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+.badge-default {
+  background: rgba(156, 163, 175, 0.1);
+  border: 1px solid rgba(156, 163, 175, 0.2);
+  color: #9ca3af;
+}
+
+.time-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #9ca3af;
+}
+
+.email-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #f3f4f6;
+  margin: 0;
+  line-height: 1.35;
+  display: -webkit-box;
+  
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.item-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.remetente {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #9ca3af;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.no-email-feedback {
+  text-align: center;
+  padding: 24px;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-weight: 600;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+/* Agrupador de badges no topo do item */
+.badges-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Tag da conta (#tec / #sup) */
+.account-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+  font-family: monospace;
+}
+
+/* Tag para Curso Técnico (#tec) */
+.account-tag.tag-tec {
+  background: rgba(0, 255, 136, 0.12);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  color: #00ff88;
+}
+
+/* Tag para Ensino Superior (#sup) */
+.account-tag.tag-sup {
+  background: rgba(0, 229, 255, 0.12);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  color: #00e5ff;
+}
+
+/* Botão de Sincronização no Cabeçalho */
+.btn-sync {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #f3f4f6;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-sync:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+/* Animação do botão girando enquanto sincroniza */
+.btn-sync.girando {
+  animation: spin 1s linear infinite;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
